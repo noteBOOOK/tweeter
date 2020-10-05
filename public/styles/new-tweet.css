@@ -1,0 +1,39 @@
+#tweet-text {
+  background: transparent;
+  resize: none;
+  border: none;
+  border-bottom: 2px solid #545149;
+  padding-top: 0.4em;
+  color: #545149;
+  outline: 0;
+  font-size: 0.8em;
+}
+
+.new-tweet {
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1em;
+}
+
+
+.submission {
+  padding-top: 0.5em;
+  font-family: "Bungee", sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background-color: #4056A1;
+  color: #FFFF;
+}

@@ -31,7 +31,6 @@ body {
  */
 
 .container {
-  border: 1px solid black;
   width: 90%;
   display: flex;
   flex-direction: row;
@@ -39,3 +38,5 @@ body {
   align-content: center;
   margin: 0 auto;
 }
+
+

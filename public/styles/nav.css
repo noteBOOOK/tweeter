@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #FFFF;
+  background-color: #4056A1;
+  height: 120px;
+  width: 100vw;
+  padding: 1.5em;
+  justify-content: space-between;
+}
+
+span {
+  font-size: 0.8em;
+}
+
+#logo {
+  font-family: "Bungee", sans-serif;
+  font-size: 1.7em;
+}

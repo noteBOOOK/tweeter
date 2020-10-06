@@ -3,13 +3,33 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  background-color: #d7eef5;
-  width: 100%;
   resize: none;
-  border: 2px solid #545149;
+  width: 100%;
+  background-color: #d7eef5;
+  border: 3px solid #545149;
+  margin-top: 3em;
+  font-size: 1em;
 }
 
-header .tweet-header {
+.tweet-header {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 0.9em;
+}
+
+header span {
+  padding: 1em 1.5em 1em 1.5em;
+  font-size: 1em;
+}
+
+.tweeter-handle {
+  color: rgb(100, 173, 197);
+}
+
+article p {
+  font-size: 0.8em;
+  padding: 1.5em;
+  margin: 0.5em;
+  border-bottom: 3px solid #545149;
 }

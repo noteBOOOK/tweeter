@@ -1,5 +1,5 @@
 
-header {
+header .nav-header {
   height: 400px;
   background-color: #76a5f7;
   color: #FFFF;
@@ -15,7 +15,7 @@ header {
   justify-content: center;
 }
 
-.yourName {
+.NavBarName {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;

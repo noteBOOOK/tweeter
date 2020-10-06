@@ -10,9 +10,11 @@
 }
 
 .new-tweet {
-  width: 75vw;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
 }
 
 
@@ -33,11 +35,6 @@ label {
   justify-content: space-between;
 }
 
-button {
-  background-color: #4056A1;
-  color: #FFFF;
-}
-
 output[charLimit = false] {
   color: #545149;
 }
@@ -45,3 +42,9 @@ output[charLimit = false] {
 output[charLimit = true] {
   color: red;
 }
+
+button {
+  background-color: #4056A1;
+  color: #FFFF;
+}
+

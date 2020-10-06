@@ -1,0 +1,15 @@
+.tweet-log{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background-color: #d7eef5;
+  width: 100%;
+  resize: none;
+  border: 2px solid #545149;
+}
+
+header .tweet-header {
+  display: flex;
+  justify-content: space-around;
+}

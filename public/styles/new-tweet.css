@@ -37,3 +37,11 @@ button {
   background-color: #4056A1;
   color: #FFFF;
 }
+
+output[charLimit = false] {
+  color: #545149;
+}
+
+output[charLimit = true] {
+  color: red;
+}

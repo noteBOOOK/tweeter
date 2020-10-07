@@ -39,37 +39,41 @@ const data = [
 
 $(document).ready(function() {
   
+  
+  
+  
   const createTweetElement = function (tweetObj) {
     let $tweet = `<article class="tweet">
-              <header class="tweet-header">
-                <div class="tweet-user">
-                  <img src="${tweetObj.user.avatars}">
-                  <span class="tweeter-name">${tweetObj.user.name}</span>
-                </div>
-                <span class="tweeter-handle">${tweetObj.user.handle}</span>
-              </header>
-              <p>${tweetObj.content.text}</p>
-              <footer>
-                <span>${tweetObj.created_at}</span>
-                <div class="symbols">
-                  <i class="fas fa-flag"></i>
-                  <i class="fas fa-retweet"></i>
-                  <i class="fas fa-heart"></i>
-                </div>
-              </footer>
-              </article>`;
+    <header class="tweet-header">
+    <div class="tweet-user">
+    <img src="${tweetObj.user.avatars}">
+    <span class="tweeter-name">${tweetObj.user.name}</span>
+    </div>
+    <span class="tweeter-handle">${tweetObj.user.handle}</span>
+    </header>
+    <p>${tweetObj.content.text}</p>
+    <footer>
+    <span>${tweetObj.created_at}</span>
+    <div class="symbols">
+    <i class="fas fa-flag"></i>
+    <i class="fas fa-retweet"></i>
+    <i class="fas fa-heart"></i>
+    </div>
+    </footer>
+    </article>`;
     
     return $tweet;
   };
   
   
   const renderTweets = function(tweets) {
+    $('.tweet-log').html('');
     for (let tweet of tweets) {
-      let $tweet = createTweetElement(tweet);
-      $('.tweet-log').append($tweet);
+      const $tweet = createTweetElement(tweet);
+      $('.tweet-log').prepend($tweet);
     }
   };
-
+  
   $('form').submit(function(event) {
     event.preventDefault();
     
@@ -84,7 +88,8 @@ $(document).ready(function() {
         method: "POST",
         data: tweet
       }).then(res => {
-        console.log("CHECK HERE!", res);
+        loadTweets();
+        $('#tweet-text').val("").trigger("keyup");
       })
     }
   })
@@ -97,8 +102,9 @@ $(document).ready(function() {
       renderTweets(res);
     })
   }
-
+  
   loadTweets();
-
-
+  
+  
+  
 });

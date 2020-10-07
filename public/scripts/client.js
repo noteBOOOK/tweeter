@@ -40,7 +40,11 @@ const data = [
 $(document).ready(function() {
   
   
-  
+  const escape = function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
   
   const createTweetElement = function (tweetObj) {
     let $tweet = `<article class="tweet">
@@ -51,7 +55,7 @@ $(document).ready(function() {
     </div>
     <span class="tweeter-handle">${tweetObj.user.handle}</span>
     </header>
-    <p>${tweetObj.content.text}</p>
+    <p>${escape(tweetObj.content.text)}</p>
     <footer>
     <span>${tweetObj.created_at}</span>
     <div class="symbols">

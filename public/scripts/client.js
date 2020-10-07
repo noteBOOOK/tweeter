@@ -61,10 +61,27 @@ const renderTweets = function(tweets) {
     let $tweet = createTweetElement(tweet);
     $('.tweet-log').append($tweet);
   }
-
 };
+
+
 
 $(document).ready(function() {
   renderTweets(data);
+  
+  $('form').submit(function(event) {
+    event.preventDefault();
+    const tweet = $(this).serialize();
+    
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: tweet
+    }).then(res => {
+      console.log("CHECK HERE!", res);
+    })
+  })
+  
+
+
 
 });

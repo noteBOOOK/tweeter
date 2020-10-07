@@ -63,11 +63,6 @@ $(document).ready(function() {
   };
   
   
-  
-  
-  
-  
-  
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       let $tweet = createTweetElement(tweet);
@@ -77,15 +72,21 @@ $(document).ready(function() {
 
   $('form').submit(function(event) {
     event.preventDefault();
-    const tweet = $(this).serialize();
     
-    $.ajax({
-      url: "/tweets",
-      method: "POST",
-      data: tweet
-    }).then(res => {
-      console.log("CHECK HERE!", res);
-    })
+    const tweet = $(this).serialize();
+    if (tweet.length <= 5) {
+      alert("You cannot post an empty Tweet!");
+    } else if (tweet.length > 145) {
+      alert("Your Tweet is over the character limit!")
+    } else {
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: tweet
+      }).then(res => {
+        console.log("CHECK HERE!", res);
+      })
+    }
   })
   
   const loadTweets = function () {

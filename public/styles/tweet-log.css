@@ -6,7 +6,6 @@
   resize: none;
   width: 100%;
   background-color: #d7eef5;
-  border: 3px solid #545149;
   margin-top: 3em;
   font-size: 1em;
 }
@@ -32,6 +31,7 @@
 .tweeter-handle {
   color: rgb(100, 173, 197);
   padding: 0.4em 0 0 0;
+  display: none;
 }
 
 .tweet-user {
@@ -50,6 +50,17 @@ article p {
 
 .tweet {
   padding: 0.7em;
+  border: 3px solid #545149;
+}
+
+.tweet:hover {
+  box-shadow: 10px 0.3em 0.3em grey;
+  border: 3px solid #545149;
+}
+
+.tweet:hover .tweeter-handle {
+  display: block;
+  color: rgb(100, 173, 197);
 }
 
 footer {

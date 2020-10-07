@@ -8,8 +8,8 @@ nav {
   justify-content: space-between;
 }
 
-span {
-  font-size: 0.8em;
+nav span {
+  font-size: 1em;
 }
 
 .logo {

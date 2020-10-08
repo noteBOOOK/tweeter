@@ -55,8 +55,8 @@ $(document).ready(function() {
     </div>
     <span class="tweeter-handle">${tweetObj.user.handle}</span>
     </header>
-    <p>${escape(tweetObj.content.text)}</p>
-    <footer>
+    <p class="tweet-content">${escape(tweetObj.content.text)}</p>
+    <footer class="tweet-footer">
     <span>${tweetObj.created_at}</span>
     <div class="symbols">
     <i class="fas fa-flag"></i>

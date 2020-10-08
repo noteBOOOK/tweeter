@@ -1,6 +1,7 @@
-nav {
+.nav-bar {
   display: flex;
   justify-content: space-between;
+  align-content: center;
   color: #FFFF;
   background-color: #4056A1;
   height: 120px;
@@ -24,4 +25,5 @@ nav {
 .logo {
   font-family: "Bungee", sans-serif;
   font-size: 1.7em;
+  margin-top: 0.4em;
 }

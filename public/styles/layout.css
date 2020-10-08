@@ -12,8 +12,6 @@ html {
   padding: 0;
 }
 
-
-
 /*
  * Global layout stuff
  */
@@ -43,4 +41,18 @@ body {
   margin: 0 auto;
   padding-left: 15vw;
   padding-right: 15vw;
+}
+
+@media only screen and (min-width: 1024px) {
+  
+  .main-body {
+    display: flex;
+    flex-direction: row;
+    margin: 10em 3em 5em 3em;
+  }
+
+  .container {
+    padding-right: 10vw;
+    padding-left: 15vw;
+  }
 }

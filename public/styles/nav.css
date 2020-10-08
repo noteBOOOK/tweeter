@@ -16,6 +16,7 @@
   background: none;
   color: #FFFF;
   border: none;
+  padding: 0.5em 0.5em;
 }
 
 .new-tweet-button:hover {

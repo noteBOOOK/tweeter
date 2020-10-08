@@ -47,6 +47,8 @@ $(document).ready(function() {
   }
   
   const createTweetElement = function (tweetObj) {
+    let date = new Date(tweetObj.created_at * 1000);
+    
     let $tweet = `<article class="tweet">
     <header class="tweet-header">
     <div class="tweet-user">
@@ -57,7 +59,7 @@ $(document).ready(function() {
     </header>
     <p class="tweet-content">${escape(tweetObj.content.text)}</p>
     <footer class="tweet-footer">
-    <span>${tweetObj.created_at}</span>
+    <span>${date}</span>
     <div class="symbols">
     <i class="fas fa-flag"></i>
     <i class="fas fa-retweet"></i>

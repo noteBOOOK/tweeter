@@ -40,6 +40,7 @@ const escape = function(str) {
 
 // Create Tweet element to render
 const createTweetElement = function(tweetObj) {
+  // Use Moment below to get time elapsed since Tweet was posted
   let date = new Date(tweetObj.created_at);
   
   let $tweet = `<article class="tweet">
@@ -61,6 +62,7 @@ const createTweetElement = function(tweetObj) {
   </footer>
   </article>`;
   
+  // Return tweet with HTML tags above with tweet information
   return $tweet;
 };
 
@@ -68,6 +70,7 @@ const createTweetElement = function(tweetObj) {
 const renderTweets = function(tweets) {
   $(".tweet-log").html("");
   for (let tweet of tweets) {
+    // Appends tweet created to list of tweets in HTML
     const $tweet = createTweetElement(tweet);
     $(".tweet-log").prepend($tweet);
   }
@@ -85,6 +88,7 @@ const loadTweets = function() {
 
 // Checks for errors before making AJAX POST request
 const createErrorMessage = function(tweet) {
+  // Creates and slides error message if necessary
   if (tweet.length <= 5) {
     $("#error-message").text("You cannot post an empty Tweet!");
     $(".error").slideDown(500);
@@ -106,6 +110,7 @@ $(document).ready(function() {
     event.preventDefault();
     $(".error").slideUp(50);
     const tweet = $(this).serialize();
+    // createErrorMessage function will return true if there are no errors
     if (createErrorMessage(tweet)) {
       $.ajax({
         url: "/tweets",
@@ -113,6 +118,7 @@ $(document).ready(function() {
         data: tweet
       }).then(res => {
         loadTweets();
+        // Resets textarea and character counter when submitting new tweets
         $("#tweet-text").val("").trigger("keyup");
       });
     }
@@ -130,7 +136,7 @@ $(document).ready(function() {
     $(this).siblings("div").children("output").trigger("reload");
   })
   
-  // Resets textarea and character counter when submitting new tweets
+  // Create tweet button in Nav will hide or show the create tweet container
   $(".new-tweet-button").on("click", function() {
     if ($(".tweet-form").is(":hidden")) {
       $(".tweet-form").slideDown(500, function() {
@@ -141,7 +147,7 @@ $(document).ready(function() {
     }
   });
   
-  
+
   loadTweets();
   $(".error").hide();
   $(".tweet-form").hide();

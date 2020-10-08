@@ -84,3 +84,9 @@
 i {
   padding: 0 0.1em 0 0.1em;
 }
+
+@media only screen and (min-width: 1024px) {
+  .tweet-log {
+    font-size: 1em;
+  }
+}

@@ -52,7 +52,7 @@ body {
   }
 
   .container {
-    padding-right: 10vw;
-    padding-left: 15vw;
+    padding-right: 0;
+    padding-left: 34vw;
   }
 }

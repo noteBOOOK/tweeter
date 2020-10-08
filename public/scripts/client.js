@@ -117,6 +117,18 @@ $(document).ready(function() {
       });
     }
   });
+
+  // Character counter set to 140 per tweet
+  $("#tweet-text").on("keyup", function() {
+    const remainingChars = 140 - $(this).val().length;
+    $(this).siblings("div").children("output").text(remainingChars);
+    if (remainingChars <= 0) {
+      $(this).siblings("div").children("output").attr("charLimit", true);
+    } else {
+      $(this).siblings("div").children("output").attr("charLimit", false);
+    }
+    $(this).siblings("div").children("output").trigger("reload");
+  })
   
   // Resets textarea and character counter when submitting new tweets
   $(".new-tweet-button").on("click", function() {
@@ -128,6 +140,7 @@ $(document).ready(function() {
       $(".tweet-form").slideUp(500);
     }
   });
+  
   
   loadTweets();
   $(".error").hide();

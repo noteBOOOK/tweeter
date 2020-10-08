@@ -88,7 +88,7 @@ $(document).ready(function() {
   
   $('form').submit(function(event) {
     event.preventDefault();
-    $('.error').slideUp(500);
+    $('.error').slideUp(100);
     const tweet = $(this).serialize();
     if (tweet.length <= 5) {
       $('#error-message').text("You cannot post an empty Tweet!");
@@ -108,11 +108,20 @@ $(document).ready(function() {
     }
   })
   
-  
+  $('.new-tweet-button').on("click", function () {
+    if ($('.tweet-form').is(":hidden")) {
+      $('.tweet-form').slideDown(500, function () {
+        $('#tweet-text').focus();
+      });
+    } else {
+      $('.tweet-form').slideUp(500);
+    }
+  })
   
   
   loadTweets();
   $('.error').hide();
+  $('.tweet-form').hide();
   
   
 });

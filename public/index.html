@@ -30,7 +30,7 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span class="logo">tweeter</span> <span>Write a new tweet <i class="fas fa-angle-double-down"></i></span>
+      <span class="logo">tweeter</span> <button class="new-tweet-button" type="button">Write a new tweet <i class="fas fa-angle-double-down"></i></button>
     </nav>
 
     <header class="nav-header">
@@ -46,19 +46,22 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+
         <div class="error">
           <i class="fas fa-exclamation-triangle"></i>
           <span id="error-message"></span>
           <i class="fas fa-exclamation-triangle"></i>
         </div>
-        <form method="POST" action="/tweets">
+
+        <form class="tweet-form" method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="submission">
-            <button type="submit">Tweet</button>
+            <button class="submit-button" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+
       </section>
 
       <section class="tweet-log">

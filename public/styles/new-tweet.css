@@ -44,7 +44,7 @@ output[charLimit = true] {
   color: rgb(136, 5, 5);
 }
 
-button {
+.submit-button {
   background-color: #4056A1;
   color: #FFFF;
 }

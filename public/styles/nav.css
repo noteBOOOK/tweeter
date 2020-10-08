@@ -10,8 +10,15 @@ nav {
   top: 0;
 }
 
-nav span {
+.new-tweet-button {
   font-size: 1em;
+  background: none;
+  color: #FFFF;
+  border: none;
+}
+
+.new-tweet-button:hover {
+  border: 1px solid white;
 }
 
 .logo {

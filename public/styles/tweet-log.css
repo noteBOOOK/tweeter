@@ -63,14 +63,11 @@
 
 .tweet-content {
   font-size: 0.8em;
-  padding: 1.5em 0.8em 1.5em 0.8em;
+  padding: 1.5em 0.8em 1.2em 0.8em;
   margin: 0.5em;
-  border-bottom: 3px solid #545149;
+  border-bottom: 2px solid #545149;
   word-break: normal;
 }
-
-
-
 
 .tweet-footer {
   display: flex;

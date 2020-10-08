@@ -6,7 +6,6 @@
 
 
 
-
 const data = [
   {
     "user": {
@@ -47,7 +46,7 @@ $(document).ready(function() {
   }
   
   const createTweetElement = function (tweetObj) {
-    let date = new Date(tweetObj.created_at * 1000);
+    let date = new Date(tweetObj.created_at);
     
     let $tweet = `<article class="tweet">
     <header class="tweet-header">
@@ -59,7 +58,7 @@ $(document).ready(function() {
     </header>
     <p class="tweet-content">${escape(tweetObj.content.text)}</p>
     <footer class="tweet-footer">
-    <span>${date}</span>
+    <span>${moment(date).fromNow()}</span>
     <div class="symbols">
     <i class="fas fa-flag"></i>
     <i class="fas fa-retweet"></i>

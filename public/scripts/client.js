@@ -69,7 +69,6 @@ $(document).ready(function() {
     return $tweet;
   };
   
-  
   const renderTweets = function(tweets) {
     $('.tweet-log').html('');
     for (let tweet of tweets) {
@@ -78,14 +77,25 @@ $(document).ready(function() {
     }
   };
   
+  const loadTweets = function () {
+    $.ajax({
+      url: "/tweets",
+      method: "GET"
+    }).then(res => {
+      renderTweets(res);
+    })
+  }
+  
   $('form').submit(function(event) {
     event.preventDefault();
-    
+    $('.error').slideUp(500);
     const tweet = $(this).serialize();
     if (tweet.length <= 5) {
-      alert("You cannot post an empty Tweet!");
+      $('#error-message').text("You cannot post an empty Tweet!");
+      $('.error').slideDown(500);
     } else if (tweet.length > 145) {
-      alert("Your Tweet is over the character limit!")
+      $('#error-message').text("Your Tweet is over the character limit! (140)")
+      $('.error').slideDown(500);
     } else {
       $.ajax({
         url: "/tweets",
@@ -98,17 +108,11 @@ $(document).ready(function() {
     }
   })
   
-  const loadTweets = function () {
-    $.ajax({
-      url: "/tweets",
-      method: "GET"
-    }).then(res => {
-      renderTweets(res);
-    })
-  }
+  
+  
   
   loadTweets();
-  
+  $('.error').hide();
   
   
 });

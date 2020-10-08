@@ -25,6 +25,7 @@ form {
 
 label {
   font-size: 1em;
+  margin: 1em 0 0 0;
 }
 
 
@@ -40,7 +41,7 @@ output[charLimit = false] {
 }
 
 output[charLimit = true] {
-  color: red;
+  color: rgb(136, 5, 5);
 }
 
 button {
@@ -48,3 +49,12 @@ button {
   color: #FFFF;
 }
 
+.error {
+  display: flex;
+  justify-content: center;
+  color: rgb(136, 5, 5);
+  border: 2px solid rgb(136, 5, 5);
+  padding: 0.4em;
+  font-size: 0.8em;
+  margin: 1em 0 0 0;
+}
